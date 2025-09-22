@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>التعرف على الإشارات</title>
+</head>
+<body>
+  <h2>رفع صورة للإشارة</h2>
+  <input type="file" id="fileInput">
+  <button onclick="sendImage()">إرسال</button>
+  <p id="result"></p>
+
+  <script>
+    async function sendImage() {
+      const fileInput = document.getElementById("fileInput").files[0];
+      const formData = new FormData();
+      formData.append("image", fileInput);
+
+      const res = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+      console.log(data);
+      document.getElementById("result").innerText = "النتيجة: " + data.prediction;
+    }
+  </script>
+</body>
+</html>
