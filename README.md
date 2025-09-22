@@ -40,7 +40,7 @@
 ```
 project/
 │
-├── app.py                # Flask API - الخادم الأساسي
+├── app_gui.py               # Flask API - الخادم الأساسي
 ├── Models/model.p        # النموذج المدرب (Pickle file)
 ├── index.html            # واجهة المستخدم (HTML + JS)
 ├── requirements.txt      # المكتبات المطلوبة
@@ -56,7 +56,7 @@ project/
 جلس عبدالرحمن في مختبر الجامعة، وبدأ تشغيل النظام عبر:
 
 ```bash
-python app.py
+python app_gui.py
 ```
 
 ظهر له الرابط:
@@ -114,7 +114,7 @@ pip install -r requirements.txt
 ### 3. تشغيل السيرفر
 
 ```bash
-python app.py
+python app_gui.py
 ```
 
 ### 4. فتح الواجهة
